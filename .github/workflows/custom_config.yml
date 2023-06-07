@@ -52,6 +52,7 @@ jobs:
       - name: Print message on successful finish
         run: echo "CI part finished successfully"
 
+
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
