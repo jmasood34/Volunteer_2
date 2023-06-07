@@ -31,12 +31,12 @@ jobs:
           # install mysqlclient
           pip install mysqlclient
           # install dependencies
-          pip install -r tutor_app/requirements.txt
+          pip install -r requirements.txt
           
 
       - name: run migrations
         run: |
-          python tutor_app/manage.py migrate
+          python manage.py migrate
 
       - name: Create zip deployment package
         run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
@@ -73,4 +73,4 @@ jobs:
       - name: Deploy new app
         run: aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIRONMENT_NAME }} --version-label "${{ github.sha }}"
       - name: Print message on success finish
-        run: echo "CD part finished successfully"
+        run: echo "CD part finished successfully!"
