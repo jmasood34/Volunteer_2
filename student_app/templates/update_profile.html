@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Comfortaa:wght@700&family=Orbitron:wght@500&family=Raleway:wght@600&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/update_profile.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'index' %}" class="logo-link">
+                <img src="{% static 'images/logo.png' %}" alt="My Project" class="logo-image">
+            </a>
+            <ul>
+                <li>
+                    <a href="#" class="username">
+                        <i class="fa fa-fw fa-user"></i>{{ student.user.username }}
+                    </a>
+                    <a href="{% url 'index' %}" class="logout-button">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+ <div class="content">
+     <div class="form-container">
+        <h1>Update Profile</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Phone Number</label>
+                <div class="fields">{{ form.phone_number }}</div>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.address.id_for_label }}">Address</label>
+                {{ form.address }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.grade.id_for_label }}">Grade</label>
+                <select id="{{ form.grade.id_for_label }}" name="{{ form.grade.html_name }}" class="form-control" required>
+                    <option value="" disabled selected>Select Grade</option>
+                    {% for choice in form.grade.field.choices %}
+                        <option value="{{ choice.0 }}" {% if form.grade.value == choice.0 %}selected{% endif %}>{{ choice.1 }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group checkbox-container">
+              <label for="{{ form.subjects.id_for_label }}">Subjects</label>
+              <div class="checkboxes">
+                {% for choice in form.subjects.field.choices %}
+                <div class="checkbox">
+                  <input type="checkbox" name="{{ form.subjects.html_name }}" value="{{ choice.0 }}" {% if choice.0 in form.subjects.value %}checked{% endif %}>
+                  <label for="subjects_{{ forloop.counter }}">{{ choice.1 }}</label>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="form-group checkbox-container">
+              <label for="{{ form.availability_days.id_for_label }}">Days Available</label>
+              <div class="checkboxes">
+                {% for choice in form.availability_days.field.choices %}
+                <div class="checkbox">
+                  <input type="checkbox" name="{{ form.availability_days.html_name }}" value="{{ choice.0 }}" {% if choice.0 in form.availability_days.value %}checked{% endif %}>
+                  <label for="availability_days_{{ forloop.counter }}">{{ choice.1 }}</label>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.availability_start.id_for_label }}">Available From</label>
+                <input type="time" id="{{ form.availability_start.id_for_label }}" name="{{ form.availability_start.html_name }}" value="{{ form.availability_start.value }}" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.availability_end.id_for_label }}">Available To</label>
+                <input type="time" id="{{ form.availability_end.id_for_label }}" name="{{ form.availability_end.html_name }}" value="{{ form.availability_end.value}}" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.preferred_tutoring_format.id_for_label }}">Preferred Tutoring Format</label>
+                <select id="{{ form.preferred_tutoring_format.id_for_label }}" name="{{ form.preferred_tutoring_format.html_name }}" class="form-control" required>
+                    <option value="" disabled selected>Select Format</option>
+                    {% for choice in form.preferred_tutoring_format.field.choices %}
+                        <option value="{{ choice.0 }}" {% if form.preferred_tutoring_format.value == choice.0 %}selected{% endif %}>{{ choice.1 }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.goals_objectives.id_for_label }}">Goals and Objectives</label>
+                {{ form.goals_objectives }}
+            </div>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+ </div>
+</body>
+</html>

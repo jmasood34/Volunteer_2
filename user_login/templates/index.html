@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/d3b9b54cf9.js" crossorigin="anonymous"></script>
+    <title>Project</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#"><img src="{% static 'images/logo.png' %}" alt="My Project"></a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Welcome to Volunteer Project</h1>
+          <p>Our project is a web application that connects students with tutors based on the student's academic performance.
+            Students can search for tutors based on their subject and their academic level. Tutors can create profiles and list their qualifications and availability.
+            </p>
+          <a href="{% url 'login_view' %}" class="btn">Login</a>
+          <a href="{% url 'register' %}" class="btn">Sign Up</a>
+        </div>
+      </section>
+      <section class="features">
+        <div class="container">
+          <h2>Our Features</h2>
+          <ul>
+            <li><i class="fas fa-check"></i>Easy to use platform</li>
+            <li><i class="fas fa-check"></i>Match with top tutors</li>
+            <li><i class="fas fa-check"></i>24/7 support</li>
+
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Project. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

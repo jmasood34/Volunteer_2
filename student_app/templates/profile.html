@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Comfortaa:wght@700&family=Orbitron:wght@500&family=Raleway:wght@600&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'index' %}" class="logo-link">
+                <img src="{% static 'images/logo.png' %}" alt="My Project" class="logo-image">
+            </a>
+            <ul>
+                <li>
+                    <a href="#" class="username">
+                        <i class="fa fa-fw fa-user"></i>{{ student.user.username }}
+                    </a>
+                    <a href="{% url 'index' %}" class="logout-button">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="profile-container">
+        <div class="profile-box">
+            <h1>STUDENT PROFILE</h1>
+              <div class="profile-field">
+            <label>FIRST NAME</label>
+            <span>{{ student.user.first_name }}</span>
+        </div>
+        <div class="profile-field">
+            <label>LAST NAME</label>
+            <span>{{ student.user.last_name }}</span>
+        </div>
+        <div class="profile-field">
+            <label>EMAIL</label>
+            <span>{{ student.user.email }}</span>
+        </div>
+        <div class="profile-field">
+            <label>USERNAME</label>
+            <span>{{ student.user.username }}</span>
+        </div>
+
+        <div class="profile-field">
+            <label>PHONE NUMBER</label>
+            <span>{{ student.phone_number }}</span>
+        </div>
+        <div class="profile-field">
+            <label>ADDRESS</label>
+            <span>{{ student.address }}</span>
+        </div>
+        <div class="profile-field">
+            <label>GRADE</label>
+            <span>{{ student.grade }}</span>
+        </div>
+        <div class="profile-field">
+            <label>SUBJECTS</label>
+            <span>{{ student.subjects }}</span>
+        </div>
+        <div class="profile-field">
+            <label>AVAILABILITY</label>
+            <span>{{ student.availability_days}} {{ student.availability_start }} to {{ student.availability_end }}</span>
+        </div>
+        <div class="profile-field">
+            <label>PREFERRED TUTORING FORMAT</label>
+            <span>{{ student.preferred_tutoring_format }}</span>
+        </div>
+        <div class="profile-field">
+            <label>GOALS AND OBJECTIVES</label>
+            <span>{{ student.goals_objectives }}</span>
+        </div>
+            <div class="bottom-buttons">
+            <a href="{% url 'landing' %}" class="back">Go Back</a>
+            <a href="{% url 'update_profile' %}" class="update">Update</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

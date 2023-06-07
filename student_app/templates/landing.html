@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alegreya+Sans+SC:wght@500&family=Anton&family=Bruno+Ace&family=Comfortaa:wght@700&family=Kosugi+Maru&family=Orbitron:wght@500&family=Raleway:wght@600&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/student.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'index' %}" class="logo-link">
+                <img src="{% static 'images/logo.png' %}" alt="My Project" class="logo-image">
+            </a>
+            <ul>
+                <li><a href="{% url 'profile' %}" class="username"><i class="fa fa-fw fa-user"></i>{{ username }}</a>
+
+                <a href="{% url 'index' %}" class="logout-button">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+        <div class="welcome">
+        <h1>Welcome {{ first_name }} {{ last_name }}!</h1>
+
+        </div>
+
+        <blockquote class="quote">
+            {{ quote }}
+            <span>{{ author }}</span>
+        </blockquote>
+
+
+        <div class="container">
+            <h2>Available Tutors for {{ grade }}</h2>
+            {% for tutor in available_tutors %}
+                <div>
+                <h4 style="text-transform: uppercase;">{{ tutor.user.first_name }} {{ tutor.user.last_name }}</h4>
+                <p>Subject: {{ tutor.subjects }}</p>
+                <p>Availability: {{ tutor.availability_days }} - {{ tutor.availability_start }} to {{ tutor.availability_end }}</p>
+                </div>
+            {% empty %}
+                <p> No Tutors Available </p>
+            {% endfor %}
+        </div>
+
+        <div class="container">
+            <h2>Reference Material for {{ grade }}</h2>
+            {% for subject, files in files_by_subject.items %}
+            <h4>{{ subject }}</h4>
+            {% if files %}
+                <ul>
+                {% for file in files %}
+                    <li><a href="{% static 'reference material/'|add:grade|add:'/'|add:subject|add:'/'|add:file %}">{{ file }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No files available for {{ subject }}</p>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <div class="container">
+            <h2>Container 3</h2>
+            <p>Content goes here...</p>
+        </div>
+
+
+</body>
+</html>

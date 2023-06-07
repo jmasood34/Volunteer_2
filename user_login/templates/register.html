@@ -1,0 +1,93 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <title>Registration</title>
+  </head>
+  <body>
+
+  <header>
+      <nav>
+        <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="My Project"></a>
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+   <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div>
+          <div>
+            <div>
+              <div class="form-block">
+                  <div>
+                      <h1>User Registration</h1>
+                </div>
+
+                <form  method="post">
+                    {% csrf_token %}
+                   <div class="form-group first">
+                    <label for="firstname">First Name<span style="color: red">*</span></label>
+                      {{ form.first_name }}
+                  </div>
+                   <div class="form-group first">
+                    <label for="lastname">Last Name<span style="color: red">*</span></label>
+                      {{ form.last_name }}
+                  </div>
+                  <div class="form-group first">
+                    <label for="username">Username<span style="color: red">*</span></label>
+                      {{ form.username }}
+                  </div>
+                  <div class="form-group first">
+                    <label for="email">Email<span style="color: red">*</span></label>
+                      {{ form.email}}
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password<span style="color: red">*</span></label>
+                      {{ form.password1 }}
+                      <p id="password-requirements" class="password-requirements">Your password must contain at least 8 characters and include both letters and numbers.</p>
+                      <script src="{% static 'script/password_requirements.js' %}"></script>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Confirm Password<span style="color: red">*</span></label>
+                      {{ form.password2 }}
+                  </div>
+                  <div style="padding:5px;">
+                    <label class="control control--checkbox"><span class="caption">Student</span>
+                        {{ form.is_student }}
+                      <div class="control__indicator"></div>
+                    </label>
+                  </div>
+                  <div style="padding:5px;">
+                    <label class="control control--checkbox"><span class="caption">Tutor</span>
+                        {{ form.is_tutor }}
+                      <div class="control__indicator"></div>
+                    </label>
+                    <script src="{% static 'script/checkbox.js' %}"></script>
+                  </div>
+
+                    <span class="text-error">
+                      {{ form.errors }}</span>
+                  <input type="submit"  value="Register" class="btn btn-pill text-white btn-block btn-primary">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  </body>
+</html>

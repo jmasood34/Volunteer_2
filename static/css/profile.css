@@ -1,0 +1,141 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #1E3C72;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+nav .logo-link {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo-image {
+  max-height: 40px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 5px;
+}
+
+nav li:first-child {
+  margin-left: 0;
+}
+
+nav .username {
+  color: white;
+  margin-right: 10px;
+  font-family: 'Alata', sans-serif;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.logout-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'Orbitron', sans-serif;
+  margin-right: 10px;
+}
+
+.logout-button:hover {
+  background-color: #45a049;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.profile-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 35px;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.profile-box h1 {
+  text-align: center;
+  border-style: groove hidden ridge;
+  margin-bottom: 40px;
+}
+
+.profile-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-field label {
+  width: 120px;
+  font-family: 'Comfortaa', cursive;
+  margin-right: 35px;
+  margin-bottom: 20px;
+}
+
+.profile-field span {
+  flex-grow: 1;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Comfortaa', cursive;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bottom-buttons a {
+  padding: 10px 20px;
+  background-color: #1E3C72;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.bottom-buttons a.back {
+  background-color: #4CAF50;
+  margin: auto;
+  font-family: 'Alata', sans-serif;
+
+}
+
+.bottom-buttons a.update {
+  background-color: #4CAF50;
+  margin: auto;
+  font-family: 'Alata', sans-serif;
+}

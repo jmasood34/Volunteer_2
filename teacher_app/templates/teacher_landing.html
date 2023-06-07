@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alegreya+Sans+SC:wght@500&family=Anton&family=Bruno+Ace&family=Comfortaa:wght@700&family=Kosugi+Maru&family=Orbitron:wght@500&family=Raleway:wght@600&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/student.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'index' %}" class="logo-link">
+                <img src="{% static 'images/logo.png' %}" alt="My Project" class="logo-image">
+            </a>
+            <ul>
+                <li><a href="{% url 'teacher_profile' %}" class="username"><i class="fa fa-fw fa-user"></i>{{ username }}</a>
+
+                <a href="{% url 'index' %}" class="logout-button">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+        <div class="welcome">
+        <h1>Welcome {{ first_name }} {{ last_name }}!</h1>
+
+        </div>
+
+        <blockquote class="quote">
+            {{ quote }}
+            <span>{{ author }}</span>
+        </blockquote>
+
+
+        <div class="container">
+            <h2>Available Students</h2>
+            {% for student in available_students %}
+                <div>
+                    <ul>
+
+                    <li style="text-transform: uppercase;">{{ student.user.first_name }} {{ student.user.last_name }}</li>
+                    <p>Subject: {{ student.subjects }}</p>
+                    <p>Availability: {{ student.availability_days }} - {{ student.availability_start }} to {{ student.availability_end }}</p>
+                    </ul>
+                </div>
+            {% empty %}
+                <p> No Students Available </p>
+            {% endfor %}
+        </div>
+
+
+
+        <div class="container">
+            <h2>Upcoming Sessions</h2>
+            <p>Schedule goes here....</p>
+        </div>
+
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+/* reset some default styles */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+header {
+  background-color: #1E3C72;
+  color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+nav img {
+  max-height: 40px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav li:first-child {
+  margin-left: 0;
+}
+
+nav a:hover {
+  color: #FFA900;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* set a background color for the body */
+body {
+  background-color: #f7f7f7;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* style the container */
+.container {
+  margin-top: 50px;
+}
+
+/* style the form */
+.form-block {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.control {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+
+.control input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.control--checkbox input:checked ~ .control__indicator {
+  background-color: #4CAF50;
+}
+
+.control__indicator:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.control--checkbox input:checked ~ .control__indicator:after {
+  display: block;
+}
+
+.control--checkbox .control__indicator:after {
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top:20px;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3E8E41;
+}
+
+.forgot-pass {
+  align: right;
+  color: #4CAF50;
+}

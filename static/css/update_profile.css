@@ -1,0 +1,133 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #1E3C72;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+nav .logo-link {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo-image {
+  max-height: 40px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 5px;
+}
+
+nav li:first-child {
+  margin-left: 0;
+}
+
+nav .username {
+  color: white;
+  margin-right: 10px;
+  font-family: 'Alata', sans-serif;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.logout-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'Orbitron', sans-serif;
+  margin-right: 10px;
+}
+
+.logout-button:hover {
+  background-color: #45a049;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.form-container {
+  display: block;
+  align: center;
+  justify-content: center;
+  height: auto;
+  width: 550px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-container h1{
+  text-align: center;
+  border-style: groove hidden ridge;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  width: 120px;
+  font-family: 'Comfortaa', cursive;
+  margin-right: 65px;
+  margin-bottom: 20px;
+}
+
+.checkboxes {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="time"],
+form select,
+form textarea {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 10px;
+}
+
+form textarea#address {
+    height: 40px;
+}

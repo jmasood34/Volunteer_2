@@ -1,0 +1,133 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #1E3C72;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+nav .logo-link {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo-image {
+  max-height: 40px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 5px;
+}
+
+nav li:first-child {
+  margin-left: 0;
+}
+
+nav .username {
+  color: white;
+  margin-right: 10px;
+  font-family: 'Alata', sans-serif;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'Orbitron', sans-serif;
+    margin-right: 10px;
+}
+
+.logout-button:hover {
+    background-color: #45a049;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0.8, 0.3, 0.3, 0.3);
+  width: 97%;
+  padding:0.2em 2px 0.8em 35px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+
+
+.welcome h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    font-weight: 700px;
+    text-align: center;
+}
+
+
+
+
+
+.quote{
+  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.5em;
+  width:90%;
+  margin: bottom 5px;
+  color: #555555;
+  padding:0.8em 10px 0.8em 75px;
+  border-left:8px solid #78C0A8 ;
+  line-height:1.6;
+  color:#78C0A8;
+  }
+
+
+
+.quote span{
+  display:block;
+  font-size: 0.5em;
+  color:#333333;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  margin-top:1em;
+}
+
+.container h2,h3{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-decoration: underline;
+}
+
+.container a{
+    font-family: 'Kosugi Maru', sans-serif;
+    text-decoration: none;
+    color: navy;
+}
+
+.container a:hover{
+    color: #FA8072;
+}
